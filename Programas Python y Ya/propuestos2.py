@@ -10,6 +10,7 @@ if sueldo>3000:
     print("Esta persona debe abonar impuestos")
 os.system("pause")
 
+
 #Programa 2
 print("Programa 2")
 num1=int(input("Ingrese primer valor:"))
@@ -39,3 +40,31 @@ else:
     print("Su producto es -> ", pro)
     print("Su division es -> ", div)
 os.system ("pause")
+
+#Programa 4: Aprobado y Reprobado
+print("Programa 4")
+print("Ingresa 3 calificaciones:")
+calI=float(input("Calificacion 1:"))
+calII=float(input("Calificacion 2:"))
+calIII=float(input("Calificacion 3:"))
+
+promedio=(calI+calII+calIII)/3
+
+print("La calificacion aprobatoria es 7")
+print("Tu promedio es ",promedio)
+
+if promedio>=7:
+    print("APROBADO")
+else:
+    print("REPROBADO")
+
+#Programa 5: Dos digitos
+print("Programa 5")
+num=int(input("Ingrese un numero del 1 al 99:"))
+if num>=10:
+    print("El numero tiene dos digitos")
+else:
+    print("El numero tiene un digito")
+
+
+
