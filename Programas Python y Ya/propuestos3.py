@@ -44,5 +44,21 @@ if valor>0: print("El numero es positivo")
 elif valor <0: print("El numero es negativo")
 elif valor==0: print("El valor es 0")
 
+#Programa 4
+
+print("Programa 4")
+tres=int(input("Ingresa un numero entero de no màs de tres cifras: "))
+
+if tres >= 0:
+    if tres < 10: print("Es un numero de una cifra")
+    elif tres <= 99: print("Es un numero de dos cifras")
+    elif tres <= 999: print("Es un numero de tres cifras")
+    else:
+        print("Numero de màs de tres cifras o sea, invalido")
+else:
+    print("Numero negativo, por lo tanto es invalido")
+
+
+
 
 
