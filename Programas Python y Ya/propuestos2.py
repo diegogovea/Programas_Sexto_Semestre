@@ -57,6 +57,8 @@ if promedio>=7:
     print("APROBADO")
 else:
     print("REPROBADO")
+    
+os.system ("pause")
 
 #Programa 5: Dos digitos
 print("Programa 5")
@@ -66,5 +68,4 @@ if num>=10:
 else:
     print("El numero tiene un digito")
 
-
-
+os.system ("pause")
