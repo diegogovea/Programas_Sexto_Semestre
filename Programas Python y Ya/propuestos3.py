@@ -36,3 +36,13 @@ print("El número mayor es:", mayor)
 numero_mayor = max(numero1, numero2, numero3)
 print("El número mayor es:", numero_mayor)
 
+#Programa 3
+
+valor=int(input("Ingresa un numero real: "))
+
+if valor>0: print("El numero es positivo")
+elif valor <0: print("El numero es negativo")
+elif valor==0: print("El valor es 0")
+
+
+
