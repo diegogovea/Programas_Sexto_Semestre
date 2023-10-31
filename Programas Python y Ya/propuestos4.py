@@ -15,3 +15,5 @@ while x<len(lista):
     x=x+1
 
 print("Numeros mayores a 100: ",mayores)
+
+#Programa 2
