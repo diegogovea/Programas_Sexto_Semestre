@@ -25,3 +25,15 @@ while x<len(lista):
     if lista[x]>=7:
         print("El valor ",lista[x]," es mayor o igual a 7")
     x=x+1
+
+#Programa 3
+
+lista = ['valeria','diego','juan','max','andrea']
+
+x=0
+while x<len(lista):
+    if len(lista[x])>=5:
+        print("El nombre ",lista[x]," tiene 5 o mas digito")
+    else:
+        print("El nombre ",lista[x]," tiene menos de 5 digitos")
+    x=x+1
