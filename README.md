@@ -1,6 +1,6 @@
 # PROGRAMAS SEXTO SEMESTRE
 
-_Acá va un párrafo que describa lo que es el proyecto_
+En este repositorio se encuentran una recopilación de algunas prácticas realizadas a lo largo del sexto semestre.
 
 ## Comenzando 🚀
 
