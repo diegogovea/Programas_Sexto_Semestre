@@ -41,6 +41,14 @@ Este repositorio contiene una serie de prácticas de programación en Python. Ca
 - [Problema 2: Números Mayores o Iguales a 7](#problema-2-números-mayores-o-iguales-a-7)
 - [Problema 3: Longitud de Nombres](#problema-3-longitud-de-nombres)
 
-Cada sección contiene una breve descripción del problema y el código de ejemplo para resolverlo. Si deseas aprender sobre programación en Python, estas prácticas son un buen punto de partida.
+## Requisitos
+
+Antes de ejecutar estos programas, asegúrate de tener los siguientes requisitos:
+
+- Python instalado en tu sistema. Puedes descargarlo desde [python.org](https://www.python.org/downloads/).
+
+También es recomendable tener un entorno de desarrollo integrado (IDE) como Visual Studio Code o PyCharm para facilitar la edición y ejecución de los programas.
+
+Cada práctica incluye el código fuente en Python que puedes ejecutar en tu entorno de desarrollo. Simplemente copia y pega el código en un archivo `.py` y ejecútalo para ver los resultados.
 
 ¡Disfruta programando!
