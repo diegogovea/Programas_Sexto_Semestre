@@ -17,3 +17,11 @@ while x<len(lista):
 print("Numeros mayores a 100: ",mayores)
 
 #Programa 2
+
+lista = [7,5,8,7,1]
+
+x=0
+while x<len(lista):
+    if lista[x]>=7:
+        print("El valor ",lista[x]," es mayor o igual a 7")
+    x=x+1
