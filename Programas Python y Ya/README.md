@@ -1,7 +1,7 @@
 # Índice de Contenidos
 
 1. [Introducción](#introducción)
-2. [Prácticas de Programación Secuencial](#prácticas-de-programación-secuencial)
+2. [Prácticas de Programación Secuencial]
    2.1. [Tema: Estructura de Programación Secuencial](#tema-estructura-de-programación-secuencial)
    2.2. [Tema 2: Estructuras Condicionales Simples y Compuestas](#tema-2-estructuras-condicionales-simples-y-compuestas)
    2.3. [Tema 3: Estructuras Condicionales Anidadas](#tema-3-estructuras-condicionales-anidadas)
