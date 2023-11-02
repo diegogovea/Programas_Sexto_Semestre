@@ -34,3 +34,15 @@ for a in range(len(o)):
     a+=1
 
 print("Hay ",e," vocales")
+
+#Programa 3: Contraseña
+x=0
+while x!=1:
+    contra = input("Ingresa una contraseña ---> ")
+    if len(contra) >= 10 and len(contra) <= 20:
+        print("Tu contraseña es: ", contra)
+        x=1
+    else:
+        print("Contraseña invalida, debe tener al menos 10 caracteres y menos de 20")
+        x=0
+
