@@ -4,9 +4,7 @@ En este repositorio se encuentran una recopilación de algunas prácticas realiz
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-
-Mira **Deployment** para conocer como desplegar el proyecto.
+Con el fin de llevar un conteo exacto de los programas que he realizado a lo largo de este
 
 
 ### Pre-requisitos 📋
