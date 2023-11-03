@@ -1,12 +1,19 @@
-# PROGRAMAS SEXTO SEMESTRE
+# PROGRAMAS HASTA SEXTO SEMESTRE
 
 En este repositorio se encuentran una recopilación de algunas prácticas realizadas a lo largo del sexto semestre.
 
-## Comenzando 🚀
+## Materias 🚀
 
-Con el fin de llevar un conteo exacto de los programas que he realizado a lo largo de este
+*Programación estructurada
+*Programación Orientada a Objetos
+*Estructura de datos I
+*Estructura de Datos II
+*Ensamblador 
+*Traductores de Lenguajes
 
 
-### Pre-requisitos 📋
+## Lenguajes de Programación 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+*Python
+*CPP
+*Ensamblador
