@@ -1,6 +1,6 @@
 # PROGRAMAS HASTA SEXTO SEMESTRE
 
-En este repositorio se encuentran una recopilación de algunas prácticas realizadas a lo largo del sexto semestre.
+En este repositorio se encuentran una recopilación de algunas prácticas realizadas a lo largo de sexto semestre.
 
 ## Materias 🚀
 
