@@ -1,0 +1,85 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+holamund.com -- emu8086 assembler version: 4.08  
+ 
+[ 29/08/2023  --  12:17:32 p. m. ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       name "holamundo"
+[   2]        :                                       
+[   3]        :                                       ; este programa imprime dos mensajes en la pantall
+[   4]        :                                       ; escribiendo directamente en la memoria de video.
+[   5]        :                                       ; en la memoria vga: el primer byte es el caracter ascii,
+[   6]        :                                       ; el siguiente byte son los atributos del caracter.
+[   7]        :                                       ; los atributos del caracter es un valor de 8 bits,
+[   8]        :                                       ; los 4 bits altos ponen el color del fondo
+[   9]        :                                       ; y los 4 bits bajos ponen el color de la letra.
+[  10]        :                                       
+[  11]        :                                       ; hex    bin        color
+[  12]        :                                       ;
+[  13]        :                                       ; 0      0000      black
+[  14]        :                                       ; 1      0001      blue
+[  15]        :                                       ; 2      0010      green
+[  16]        :                                       ; 3      0011      cyan
+[  17]        :                                       ; 4      0100      red
+[  18]        :                                       ; 5      0101      magenta
+[  19]        :                                       ; 6      0110      brown
+[  20]        :                                       ; 7      0111      light gray
+[  21]        :                                       ; 8      1000      dark gray
+[  22]        :                                       ; 9      1001      light blue
+[  23]        :                                       ; a      1010      light green
+[  24]        :                                       ; b      1011      light cyan
+[  25]        :                                       ; c      1100      light red
+[  26]        :                                       ; d      1101      light magenta
+[  27]        :                                       ; e      1110      yellow
+[  28]        :                                       ; f      1111      white
+[  29]        :                                       
+[  30]        :                                       
+[  31]        :                                       
+[  32]        :                                       org 100h
+[  33]        :                                       
+[  34]    0100: B0 01                                 	mov al, 1
+[  35]    0102: B7 00                                 	mov bh, 0
+[  36]    0104: B3 9F                                 	mov bl, 1001_1111b
+[  37]    0106: B9 46 00                              	mov cx, msg2 - offset msg1 ; calcula el tamaño del mensaje.
+[  38]    0109: B2 07                                 	mov dl, 7
+[  39]    010B: B6 0B                                 	mov dh, 11
+[  40]    010D: 0E                                    	push cs
+[  41]    010E: 07                                    	pop es
+[  42]    010F: BD 26 01                              	mov bp, offset msg1
+[  43]    0112: B4 13                                 	mov ah, 13h
+[  44]    0114: CD 10                                 	int 10h
+[  45]    0116: B9 0B 00                              	mov cx, msgend - offset msg2
+[  46]    0119: B2 24                                 	mov dl, 36
+[  47]    011B: B6 0D                                 	mov dh, 13
+[  48]    011D: BD 6C 01                              	mov bp, offset msg2
+[  49]    0120: B4 13                                 	mov ah, 13h
+[  50]    0122: CD 10                                 	int 10h
+[  51]    0124: EB 51                                 	jmp msgend
+[  52]        :                                       	
+[  53]    0126: 48 6F 6C 61 2C 20 73 65 6D 69 6E 61   msg1    db "Hola, seminario de solución de problemas de traductores de lenguaje 1"
+                72 69 6F 20 64 65 20 73 6F 6C 75 63 
+                69 C3 B3 6E 20 64 65 20 70 72 6F 62 
+                6C 65 6D 61 73 20 64 65 20 74 72 61 
+                64 75 63 74 6F 72 65 73 20 64 65 20 
+                6C 65 6E 67 75 61 6A 65 20 31       
+[  54]    016C: 73 65 63 63 69 6F 6E 20 44 30 31      msg2    db "seccion D01"
+[  55]        :                                       
+[  56]    0177:                                       msgend:
+[  57]    0177: B4 00                                 mov ah,0
+[  58]    0179: CD 16                                 int 16h
+[  59]    017B: CD 20                                 int 20h
+[  60]        :                                       
+[  61]        :                                       
+[  62]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================
