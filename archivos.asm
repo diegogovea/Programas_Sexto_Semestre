@@ -4,55 +4,57 @@ name "archivos"
 include emu8086.inc
 org 100h
  jmp inicio 
- archivo1 db 11 dup (0), 0
- archivo2 db 11 dup (0), 0
- linea db 50 dup (0), 0 
- salto db 13, 10
- caracter db "$" 
- contador dw 0x0 
- parcial dw 0x0
- handle dw ?
- handle2 dw ? 
- numerador dw ?
- denominador db 0x0A
- residuo db ?
- cociente db ?
- decimal db 48,48,48,32
+;Declarar Variables
+
+     archivo1 db 11 dup (0), 0
+     archivo2 db 11 dup (0), 0
+     linea db 50 dup (0), 0 
+     salto db 13, 10
+     caracter db "$" 
+     contador dw 0x0 
+     parcial dw 0x0
+     handle dw ?
+     handle2 dw ? 
+     numerador dw ?
+     denominador db 0x0A
+     residuo db ?
+     cociente db ?
+     decimal db 48,48,48,32
  
 inicio: 
  GOTOXY 8,4
  PRINT "Seminario de Traductores de lenguajes"
  GOTOXY 8,5 
- PRINT "Daniel Sanchez Zepeda" 
+ PRINT "Diego Leon Govea Ortiz" 
  GOTOXY 8,6 
- PRINT "Digite el nombre del archivo entrada: " 
+ PRINT "Escribir nombre de archivo de entrada: " 
  xor ax, ax
  lea di,archivo1
   mov dx,11
  call GET_STRING
  GOTOXY 8,7 
- PRINT "Digite el nombre del archivo salida: " 
+ PRINT "Escribir nombre de archivo de salida: " 
  xor ax, ax
  lea di,archivo2
  mov dx,11
  call GET_STRING 
  GOTOXY 8,8 
- PRINT "Los archivos se almacenan en C:\emu8086\MyBuild" 
+ PRINT "Localizados en C:\emu8086\MyBuild" 
  
- xor ax, ax
- xor dx, dx
- mov al, 0 
- mov dx, offset archivo1 
- mov ah, 3dh 
-int 21h
-jc err 
- mov handle, ax 
- 
+  xor ax, ax
+  xor dx, dx
+  mov al, 0 
+  mov dx, offset archivo1 
+  mov ah, 3dh 
+  int 21h
+  jc err 
+  mov handle, ax 
+  
  mov cx, 0 ; normal - no attributes. 
  mov dx, offset archivo2
  mov ah, 0x3c
  int 21h
-jc errCrear
+ jc errCrear
  mov handle2, ax 
  
  xor bx, bx 
