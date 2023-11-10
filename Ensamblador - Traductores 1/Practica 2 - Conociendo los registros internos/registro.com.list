@@ -1,0 +1,112 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+registro.com -- emu8086 assembler version: 4.08  
+ 
+[ 29/08/2023  --  12:47:44 p. m. ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       name "registros"
+[   2]        :                                       
+[   3]        :                                       ; este programa imprime dos mensajes en la pantall
+[   4]        :                                       ; escribiendo directamente en la memoria de video.
+[   5]        :                                       ; en la memoria vga: el primer byte es el caracter ascii,
+[   6]        :                                       ; el siguiente byte son los atributos del caracter.
+[   7]        :                                       ; los atributos del caracter es un valor de 8 bits,
+[   8]        :                                       ; los 4 bits altos ponen el color del fondo
+[   9]        :                                       ; y los 4 bits bajos ponen el color de la letra.
+[  10]        :                                       
+[  11]        :                                       ; hex    bin        color
+[  12]        :                                       ;
+[  13]        :                                       ; 0      0000      black
+[  14]        :                                       ; 1      0001      blue
+[  15]        :                                       ; 2      0010      green
+[  16]        :                                       ; 3      0011      cyan
+[  17]        :                                       ; 4      0100      red
+[  18]        :                                       ; 5      0101      magenta
+[  19]        :                                       ; 6      0110      brown
+[  20]        :                                       ; 7      0111      light gray
+[  21]        :                                       ; 8      1000      dark gray
+[  22]        :                                       ; 9      1001      light blue
+[  23]        :                                       ; a      1010      light green
+[  24]        :                                       ; b      1011      light cyan
+[  25]        :                                       ; c      1100      light red
+[  26]        :                                       ; d      1101      light magenta
+[  27]        :                                       ; e      1110      yellow
+[  28]        :                                       ; f      1111      white
+[  29]        :                                       
+[  30]        :                                       
+[  31]        :                                       
+[  32]        :                                       org 100h
+[  33]        :                                       
+[  34]    0100: B0 01                                 	mov al, 1
+[  35]    0102: B7 00                                 	mov bh, 0
+[  36]        :                                       	;Mensaje uno
+[  37]    0104: B3 F9                                 	mov bl, 1111_1001b
+[  38]    0106: B9 4C 00                              	mov cx, msg2 - offset msg1 ; calcula el tamano del mensaje.
+[  39]    0109: B2 03                                 	mov dl, 3
+[  40]    010B: B6 0B                                 	mov dh, 11
+[  41]    010D: BD 36 01                              	mov bp, offset msg1
+[  42]    0110: B4 13                                 	mov ah, 13h
+[  43]    0112: CD 10                                 	int 10h
+[  44]        :                                       	
+[  45]        :                                       	
+[  46]        :                                       	
+[  47]        :                                       	;Mensaje dos
+[  48]    0114: B3 FC                                 	mov bl, 1111_1100b
+[  49]    0116: B9 16 00                              	mov cx, msg3 - offset msg2
+[  50]    0119: B2 1C                                 	mov dl, 28
+[  51]    011B: B6 0D                                 	mov dh, 13
+[  52]    011D: BD 82 01                              	mov bp, offset msg2
+[  53]    0120: B4 13                                 	mov ah, 13h
+[  54]    0122: CD 10                                 	int 10h
+[  55]        :                                       	
+[  56]        :                                       	
+[  57]        :                                       	;mensaje tres
+[  58]        :                                       	
+[  59]    0124: B3 E5                                 	mov bl, 1110_0101b
+[  60]    0126: B9 16 00                              	mov cx, msgend - offset msg3 ; calcula el tamano del mensaje.
+[  61]    0129: B2 1C                                 	mov dl, 28
+[  62]    012B: B6 0F                                 	mov dh, 15
+[  63]    012D: BD 98 01                              	mov bp, offset msg3
+[  64]    0130: B4 13                                 	mov ah, 13h
+[  65]    0132: CD 10                                 	int 10h
+[  66]        :                                       	
+[  67]        :                                       	
+[  68]    0134: EB 78                                 	jmp msgend
+[  69]        :                                       	
+[  70]    0136: 53 65 63 63 69 6F 6E 20 44 30 31 2C   msg1    db "Seccion D01, seminario de solucion de problemas de traductores de lenguaje 1"
+                20 73 65 6D 69 6E 61 72 69 6F 20 64 
+                65 20 73 6F 6C 75 63 69 6F 6E 20 64 
+                65 20 70 72 6F 62 6C 65 6D 61 73 20 
+                64 65 20 74 72 61 64 75 63 74 6F 72 
+                65 73 20 64 65 20 6C 65 6E 67 75 61 
+                6A 65 20 31                         
+[  71]    0182: 45 64 69 66 69 63 69 6F 20 41 6C 70   msg2    db "Edificio Alpha: Aula 8"
+                68 61 3A 20 41 75 6C 61 20 38       
+[  72]    0198: 44 69 65 67 6F 20 4C 65 6F 6E 20 47   msg3    db "Diego Leon Govea Ortiz"
+                6F 76 65 61 20 4F 72 74 69 7A       
+[  73]        :                                       
+[  74]    01AE:                                       msgend:
+[  75]    01AE: BA 18 D3                              mov dx,0xD318 ;16 bits mas significativos del codigo de alumno ;221349925
+[  76]    01B1: B9 25 88                              mov cx,0x8825 ;16 bits menos significativos del codigo de alumno ;221349925   ;1101 0011 0001 1000 1000 0010 0101
+[  77]    01B4: BB 99 14                              mov bx,0x1499 ;16 bits mas significativos del NRC del curso
+[  78]    01B7: B4 00                                 mov ah,0
+[  79]        :                                       
+[  80]    01B9: CD 16                                 int 16h
+[  81]    01BB: B8 96 49                              mov ax,0x4996 ;16 bits menos significativos del NRC del curso ;84374 ;0001 0100 1001 1001 0110
+[  82]    01BE: CD 20                                 int 20h
+[  83]        :                                       
+[  84]        :                                       
+[  85]        :                                       
+[  86]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================
